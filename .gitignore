@@ -5,3 +5,5 @@
 /.vs/Basket
 /Basket/bin/Debug/netcoreapp2.1
 /Basket/obj
+/Basket.Tests/obj
+/Basket.Tests/bin/Debug/netcoreapp2.1
