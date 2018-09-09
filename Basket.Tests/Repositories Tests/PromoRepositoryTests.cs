@@ -1,4 +1,5 @@
 ﻿using Basket.Domain;
+using Basket.Domain.Repositories.Concrete;
 using Common;
 using Xunit;
 
@@ -12,26 +13,26 @@ namespace Basket.Tests.Repositories_Tests
         public void GetPromoOneShouldReturnProperPromo()
         {
             //  Arrange
-            //PromoRepository promoRepo = new promoRepo();
+            PromoRepository promoRepo = new PromoRepository();
 
             //  Act
-            //Promo promoOne = promoRepo.GetPromoOne();
+            Promo promoOne = promoRepo.GetPromoOne();
 
             //  Assert
-            //Assert.Equal(IsTestPromoOne(promoOne), true);
+            Assert.True(IsTestPromoOne(promoOne));
         }
 
         [Fact]
         public void GetPromoTwoShouldReturnProperPromo()
         {
             //  Arrange
-            //PromoRepository promoRepo = new promoRepo();
+            PromoRepository promoRepo = new PromoRepository();
 
             //  Act
-            //Promo promoTwo = promoRepo.GetPromoTwo();
+            Promo promoTwo = promoRepo.GetPromoTwo();
 
             //  Assert
-            //Assert.Equal(IsTestPromoTwo(promoTwo), true);
+            Assert.True(IsTestPromoTwo(promoTwo));
         }
 
         #endregion

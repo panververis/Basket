@@ -1,4 +1,5 @@
 ﻿using Basket.Domain;
+using Basket.Domain.Repositories.Concrete;
 using Common;
 using Xunit;
 
@@ -11,37 +12,37 @@ namespace Basket.Tests.Repositories_Tests
         [Fact]
         public void GetButterShouldReturnPredefinedButterProduct() {
             //  Arrange
-            //ProductRepository prodRepo = new prodRepo();
+            ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            //Product butter = prodRepo.GetButter();
+            Product butter = prodRepo.GetButter();
 
             //  Assert
-            //Assert.Equal(IsTestButter(butter), true);
+            Assert.True(IsTestButter(butter));
         }
 
         [Fact]
         public void GetMilkShouldReturnPredefinedMilkProduct() {
             //  Arrange
-            //ProductRepository prodRepo = new prodRepo();
+            ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            //Product milk = prodRepo.GetMilk();
+            Product milk = prodRepo.GetMilk();
 
             //  Assert
-            //Assert.Equal(IsTestMilk(milk), true);
+            Assert.True(IsTestMilk(milk));
         }
 
         [Fact]
         public void GetBreadShouldReturnPredefinedBreadProduct() {
             //  Arrange
-            //ProductRepository prodRepo = new prodRepo();
+            ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            //Product bread = prodRepo.GetBread();
+            Product bread = prodRepo.GetBread();
 
             //  Assert
-            ////Assert.Equal(IsTestBread(bread), true);
+            Assert.True(IsTestBread(bread));
         }
 
         [Theory]
