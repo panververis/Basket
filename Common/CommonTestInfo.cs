@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Common
+﻿namespace Common
 {
     /// <summary>
     /// This static class serves the sole purpose of keeping some "shared" Test Information, 
@@ -9,9 +7,9 @@ namespace Common
     public static class CommonTestInfo
     {
         //  Initial Product Prices
-        public static decimal ButterPrice                   => 0.80m;
-        public static decimal MilkPrice                     => 1.15m;
-        public static decimal BreadPrice                    => 1.00m;
+        public static decimal       ButterPrice     => 0.80m;
+        public static decimal       MilkPrice       => 1.15m;
+        public static decimal       BreadPrice      => 1.00m;
 
         //  Promo Properties
         public static int     PromoOneRequiredButterQty     => 2;

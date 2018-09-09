@@ -1,4 +1,4 @@
-﻿using Basket.Enums;
+﻿using Common.Enums;
 
 namespace Basket.Domain
 {

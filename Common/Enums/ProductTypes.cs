@@ -1,4 +1,4 @@
-﻿namespace Basket.Enums
+﻿namespace Common.Enums
 {
     public enum ProductTypes
     {
