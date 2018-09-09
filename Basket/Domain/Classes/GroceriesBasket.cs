@@ -11,8 +11,10 @@ namespace Basket.Domain.Classes
 
         public GroceriesBasket(IPromoRepository promoRepository, IProductRepository productRepository)
         {
-            PromoRepo   = promoRepository;
-            ProductRepo = productRepository;
+            PromoRepo       = promoRepository;
+            ProductRepo     = productRepository;
+            ProductsList    = new List<Product>();
+            PromosList      = new List<Promo>();
         }
 
         #endregion
@@ -33,17 +35,20 @@ namespace Basket.Domain.Classes
 
         public void AddButter()
         {
-            throw new Exception("Not yet implemented");
+            Product butter = ProductRepo.GetButter();
+            ProductsList.Add(butter);
         }
 
         public void AddMilk()
         {
-            throw new Exception("Not yet implemented");
+            Product milk = ProductRepo.GetMilk();
+            ProductsList.Add(milk);
         }
 
         public void AddBread()
         {
-            throw new Exception("Not yet implemented");
+            Product bread = ProductRepo.GetBread();
+            ProductsList.Add(bread);
         }
 
         public void AddProducts(int buttersQty, int milksQty, int breadsQty)
