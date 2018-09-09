@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Basket
+/Basket/bin/Debug/netcoreapp2.1
+/Basket/obj
