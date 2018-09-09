@@ -1,6 +1,8 @@
 ﻿using Basket.Domain;
 using Basket.Domain.Repositories.Concrete;
 using Common;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Basket.Tests.Repositories_Tests
@@ -49,13 +51,15 @@ namespace Basket.Tests.Repositories_Tests
         [InlineData(null, null, null)]
         public void GetProductsWithCorrectNumberOfProducts(int? buttersQty, int? milksQty, int? breadQty) {
             //  Arrange
-            //ProductRepository prodRepo = new prodRepo();
+            ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            //IEnumerable products = prodRepo.GetProducts();
+            List<Product> products = prodRepo.GetProducts();
 
             //  Assert
-            //Assert that the returned IEnumerable of Products holds the requested quantity of products of each kind
+            Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Butter));
+            Assert.Equal(milksQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Milk));
+            Assert.Equal(breadQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Bread));
         }
 
         #endregion

@@ -21,9 +21,22 @@ namespace Basket.Domain.Repositories.Concrete
             return new Product("Super awesome bread brand", 1.00m, Common.Enums.ProductTypes.Bread);
         }
 
-        public IEnumerable<Product> GetProducts(int? buttersQty, int? milksQty, int? breadsQty)
+        public List<Product> GetProducts(int? buttersQty = 1, int? milksQty = 1, int? breadsQty = 1)
         {
-            throw new NotImplementedException();
+            List<Product> productsList = new List<Product>();
+            for (int i = 0; i < buttersQty.Value; i++)
+            {
+                productsList.Add(GetButter());
+            }
+            for (int i = 0; i < milksQty.Value; i++)
+            {
+                productsList.Add(GetMilk());
+            }
+            for (int i = 0; i < breadsQty.Value; i++)
+            {
+                productsList.Add(GetBread());
+            }
+            return productsList;
         }
     }
 }

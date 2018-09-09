@@ -7,6 +7,6 @@ namespace Basket.Domain.Repositories.Interfaces
         Product GetButter();
         Product GetMilk();
         Product GetBread();
-        IEnumerable<Product> GetProducts(int? buttersQty, int? milksQty, int? breadsQty);
+        List<Product> GetProducts(int? buttersQty = 1, int? milksQty = 1, int? breadsQty = 1);
     }
 }
