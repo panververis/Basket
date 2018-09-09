@@ -1,6 +1,7 @@
 ﻿using Basket.Domain;
 using Basket.Domain.Repositories.Concrete;
 using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -53,7 +54,6 @@ namespace Basket.Tests.Repositories_Tests
         [InlineData(10, 20, 30)]
         [InlineData(5, 6, 8)]
         [InlineData(14, 9, 100)]
-        [InlineData(-6, 0, 45)]
         public void GetProductsWithCorrectNumberOfProducts(int? buttersQty, int? milksQty, int? breadQty) {
             //  Arrange
             ProductRepository prodRepo = new ProductRepository();
@@ -65,6 +65,20 @@ namespace Basket.Tests.Repositories_Tests
             Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Butter));
             Assert.Equal(milksQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Milk));
             Assert.Equal(breadQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Bread));
+        }
+
+        [Theory]
+        [InlineData(-6, -100, -1)]
+        [InlineData(0, 0, 0)]
+        [InlineData(-1, 0, -4)]
+        [InlineData(0, -14, -4)]
+        public void GetProductsWithZeroOrNegativeArgumentsShouldThrowException(int? buttersQty, int? milksQty, int? breadQty)
+        {
+            //  Arrange
+            ProductRepository prodRepo = new ProductRepository();
+
+            //  Act / Assert
+            Assert.Throws<Exception>(() => prodRepo.GetProducts(buttersQty, milksQty, breadQty));
         }
 
         #endregion
