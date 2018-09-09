@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Basket.Domain;
+using Common;
+using System;
 using System.Linq;
 using Xunit;
 
@@ -61,10 +63,23 @@ namespace Basket.Tests.Repositories_Tests
 
         #region Helper Methods
 
-        //  Here I will reference a common place in code that will define what are the "predefined" Products,
-        //  as required for the needs of this small project
-        //  These will include  "IsTestButter", "IsTestMilk", "IsTestBread" for example
+        private bool IsTestButter(Product butter)
+        {
+            return      butter.ProductType == Common.Enums.ProductTypes.Butter 
+                    &&  butter.Price == CommonTestInfo.ButterPrice;
+        }
 
+        private bool IsTestMilk(Product milk)
+        {
+            return milk.ProductType == Common.Enums.ProductTypes.Milk
+                    && milk.Price == CommonTestInfo.MilkPrice;
+        }
+
+        private bool IsTestBread(Product bread)
+        {
+            return bread.ProductType == Common.Enums.ProductTypes.Bread
+                    && bread.Price == CommonTestInfo.BreadPrice;
+        }
 
         #endregion
     }
