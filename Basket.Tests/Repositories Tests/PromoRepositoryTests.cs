@@ -47,7 +47,6 @@ namespace Basket.Tests.Repositories_Tests
                     &&  promoOne.ApplicableProductType          == Common.Enums.ProductTypes.Bread;
         }
 
-
         private bool IsTestPromoTwo(Promo promoTwo)
         {
             return     promoTwo.RequiredProductQty              == CommonTestInfo.PromoTwoRequiredMilkQty

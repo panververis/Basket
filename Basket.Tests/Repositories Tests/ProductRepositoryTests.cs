@@ -49,12 +49,17 @@ namespace Basket.Tests.Repositories_Tests
 
         [Theory]
         [InlineData(null, null, null)]
+        [InlineData(1, 2, 3)]
+        [InlineData(10, 20, 30)]
+        [InlineData(5, 6, 8)]
+        [InlineData(14, 9, 100)]
+        [InlineData(-6, 0, 45)]
         public void GetProductsWithCorrectNumberOfProducts(int? buttersQty, int? milksQty, int? breadQty) {
             //  Arrange
             ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            List<Product> products = prodRepo.GetProducts();
+            List<Product> products = prodRepo.GetProducts(buttersQty, milksQty, breadQty);
 
             //  Assert
             Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == Common.Enums.ProductTypes.Butter));

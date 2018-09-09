@@ -21,18 +21,18 @@ namespace Basket.Domain.Repositories.Concrete
             return new Product("Super awesome bread brand", 1.00m, Common.Enums.ProductTypes.Bread);
         }
 
-        public List<Product> GetProducts(int? buttersQty = 1, int? milksQty = 1, int? breadsQty = 1)
+        public List<Product> GetProducts(int? buttersQty, int? milksQty, int? breadsQty)
         {
             List<Product> productsList = new List<Product>();
-            for (int i = 0; i < buttersQty.Value; i++)
+            for (int i = 0; i < buttersQty.GetValueOrDefault(1); i++)
             {
                 productsList.Add(GetButter());
             }
-            for (int i = 0; i < milksQty.Value; i++)
+            for (int i = 0; i < milksQty.GetValueOrDefault(1); i++)
             {
                 productsList.Add(GetMilk());
             }
-            for (int i = 0; i < breadsQty.Value; i++)
+            for (int i = 0; i < breadsQty.GetValueOrDefault(1); i++)
             {
                 productsList.Add(GetBread());
             }
