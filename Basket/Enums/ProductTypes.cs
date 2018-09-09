@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Basket.Enums
+﻿namespace Basket.Enums
 {
     public enum ProductTypes
     {
