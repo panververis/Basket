@@ -1,6 +1,6 @@
 ﻿namespace Basket.Domain.Repositories.Interfaces
 {
-    interface IPromoRepository
+    public interface IPromoRepository
     {
         Promo GetPromoOne();
         Promo GetPromoTwo();

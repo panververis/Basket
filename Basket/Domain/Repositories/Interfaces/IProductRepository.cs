@@ -2,7 +2,7 @@
 
 namespace Basket.Domain.Repositories.Interfaces
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         Product GetButter();
         Product GetMilk();
