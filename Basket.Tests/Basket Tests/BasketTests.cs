@@ -64,7 +64,7 @@ namespace Basket.Tests.Basket_Tests
             //  Arrange
             Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
             Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x => x.GetProducts(null, null, null)).Returns(new List<Product>() { new Product("Product", 1.50m, Common.Enums.ProductTypes.Bread) });
+            productRepository.Setup(x => x.GetProducts(1, 1, 1)).Returns(new List<Product>() { new Product("Product", 1.50m, Common.Enums.ProductTypes.Bread) });
             GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
 
             //  Act

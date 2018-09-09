@@ -53,7 +53,8 @@ namespace Basket.Domain.Classes
 
         public void AddProducts(int buttersQty, int milksQty, int breadsQty)
         {
-            throw new Exception("Not yet implemented");
+            List<Product> productsList = ProductRepo.GetProducts(buttersQty, milksQty, breadsQty);
+            ProductsList = productsList;
         }
 
         public void CalculateFinalCost()
