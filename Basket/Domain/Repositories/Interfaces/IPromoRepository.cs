@@ -2,6 +2,7 @@
 {
     interface IPromoRepository
     {
-
+        Promo GetPromoOne();
+        Promo GetPromoTwo();
     }
 }

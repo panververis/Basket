@@ -1,7 +1,5 @@
 ﻿using Basket.Domain;
 using Common;
-using System;
-using System.Linq;
 using Xunit;
 
 namespace Basket.Tests.Repositories_Tests
