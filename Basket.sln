@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Tests", "Basket.Tests\Basket.Tests.csproj", "{2A9C63C0-922B-45B9-9854-DE3F80CF7B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.Tests", "Basket.Tests\Basket.Tests.csproj", "{2A9C63C0-922B-45B9-9854-DE3F80CF7B22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{98FC8828-B437-4809-8B8F-2205544ACA0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{2A9C63C0-922B-45B9-9854-DE3F80CF7B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A9C63C0-922B-45B9-9854-DE3F80CF7B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A9C63C0-922B-45B9-9854-DE3F80CF7B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FC8828-B437-4809-8B8F-2205544ACA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FC8828-B437-4809-8B8F-2205544ACA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FC8828-B437-4809-8B8F-2205544ACA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FC8828-B437-4809-8B8F-2205544ACA0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
