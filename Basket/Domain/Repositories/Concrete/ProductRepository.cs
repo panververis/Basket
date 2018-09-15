@@ -24,8 +24,11 @@ namespace Basket.Domain.Repositories.Concrete
         public List<Product> GetProducts(int? buttersQty, int? milksQty, int? breadsQty)
         {
             //  Guard Clause (protecting against invalid input)
-            if (buttersQty <= 0 || milksQty <= 0 || breadsQty <= 0) {
-                throw new Exception("Invalid input - failed to create products");
+            if (buttersQty < 0 || milksQty < 0 || breadsQty < 0) {
+                throw new Exception("Invalid negative input - failed to create products");
+            }
+            if (buttersQty == 0 && milksQty == 0 && breadsQty == 0) {
+                throw new Exception("Invalid all zeroes input - failed to create products");
             }
             List<Product> productsList = new List<Product>();
             for (int i = 0; i < buttersQty.GetValueOrDefault(1); i++)

@@ -21,13 +21,13 @@ namespace Basket.Domain.Classes
 
         #region Properties
 
-        private IPromoRepository    PromoRepo          { get; set; }
-        private IProductRepository  ProductRepo        { get; set; }
-        public  List<Product>      ProductsList        { get; private set; }
-        public  List<Promo>        PromosList          { get; private set; }
-        public  decimal            TotalCost           { get; private set; }
-        public  decimal            PromoDeductions     { get; private set; }
-        public  decimal            FinalCost           { get; private set; }
+        private IPromoRepository    PromoRepo           { get; set; }
+        private IProductRepository  ProductRepo         { get; set; }
+        public  List<Product>       ProductsList        { get; private set; }
+        public  List<Promo>         PromosList          { get; private set; }
+        public  decimal             TotalCost           { get; private set; }
+        public  decimal             PromoDeductions     { get; private set; }
+        public  decimal             FinalCost           { get; private set; }
 
         #endregion
 

@@ -70,7 +70,7 @@ namespace Basket.Tests.Repositories_Tests
         [Theory]
         [InlineData(-6, -100, -1)]
         [InlineData(0, 0, 0)]
-        [InlineData(-1, 0, -4)]
+        [InlineData(-1, -5, -4)]
         [InlineData(0, -14, -4)]
         public void GetProductsWithZeroOrNegativeArgumentsShouldThrowException(int? buttersQty, int? milksQty, int? breadQty)
         {

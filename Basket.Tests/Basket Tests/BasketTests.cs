@@ -1,5 +1,6 @@
 ﻿using Basket.Domain;
 using Basket.Domain.Classes;
+using Basket.Domain.Repositories.Concrete;
 using Basket.Domain.Repositories.Interfaces;
 using Moq;
 using System.Collections.Generic;
@@ -83,9 +84,10 @@ namespace Basket.Tests.Basket_Tests
         {
             //  Arrange
             Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
-            Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
+            ProductRepository productRepository = new ProductRepository();
 
-            GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
+            GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository);
+            basket.AddProducts(buttersQty, milksQty, breadsQty);
 
             //  Act
             basket.CalculateFinalCost();
