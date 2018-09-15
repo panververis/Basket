@@ -2,6 +2,7 @@
 using Basket.Domain.Classes;
 using Basket.Domain.Repositories.Concrete;
 using Basket.Domain.Repositories.Interfaces;
+using Common.Enums;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +16,16 @@ namespace Basket.Tests.Basket_Tests
         public void CheckAddButterAddsAButter()
         {
             //  Arrange
-            Mock<IPromoRepository> promoRepository     = new Mock<IPromoRepository>();
-            Mock<IProductRepository> productRepository   = new Mock<IProductRepository>();
-            productRepository.Setup(x => x.GetButter()).Returns(new Product("A butter", 0.80m, Common.Enums.ProductTypes.Butter));
+            Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
+            Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
+            productRepository.Setup(x => x.GetButter()).Returns(new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Butter));
             GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
 
             //  Act
             basket.AddButter();
 
             //  Assert
-            Assert.Equal(1, basket.ProductsList.Count(x => x.ProductType == Common.Enums.ProductTypes.Butter));
+            Assert.Equal(1, basket.ProductsList.Count(x => x.ProductType == ProductTypes.Butter));
         }
 
         [Fact]
@@ -33,7 +34,7 @@ namespace Basket.Tests.Basket_Tests
             //  Arrange
             Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
             Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x => x.GetMilk()).Returns(new Product("A milk", 0.80m, Common.Enums.ProductTypes.Milk));
+            productRepository.Setup(x => x.GetMilk()).Returns(new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Milk));
             GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
 
             //  Act
@@ -49,14 +50,14 @@ namespace Basket.Tests.Basket_Tests
             //  Arrange
             Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
             Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x => x.GetBread()).Returns(new Product("A bread", 0.80m, Common.Enums.ProductTypes.Bread));
+            productRepository.Setup(x => x.GetBread()).Returns(new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Bread));
             GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
 
             //  Act
             basket.AddBread();
 
             //  Assert
-            Assert.Equal(1, basket.ProductsList.Count(x => x.ProductType == Common.Enums.ProductTypes.Bread));
+            Assert.Equal(1, basket.ProductsList.Count(x => x.ProductType == ProductTypes.Bread));
         }
 
         [Fact]
@@ -65,7 +66,7 @@ namespace Basket.Tests.Basket_Tests
             //  Arrange
             Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
             Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
-            productRepository.Setup(x => x.GetProducts(1, 1, 1)).Returns(new List<Product>() { new Product("Product", 1.50m, Common.Enums.ProductTypes.Bread) });
+            productRepository.Setup(x => x.GetProducts(1, 1, 1)).Returns(new List<Product>() { new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Bread) });
             GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
 
             //  Act
@@ -73,6 +74,22 @@ namespace Basket.Tests.Basket_Tests
 
             //  Assert
             Assert.NotEmpty(basket.ProductsList);
+        }
+
+        [Fact]
+        public void CheckAddPromosAddsPromos()
+        {
+            //  Arrange
+            Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
+            Mock<IProductRepository> productRepository = new Mock<IProductRepository>();
+            promoRepository.Setup(x => x.GetPromoOne()).Returns(new Promo(It.IsAny<string>(), It.IsAny<ProductTypes>(), It.IsAny<int>(), It.IsAny<ProductTypes>(), It.IsAny<int>()));
+            GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository.Object);
+
+            //  Act
+            basket.AddPromos();
+
+            //  Assert
+            Assert.NotEmpty(basket.PromosList);
         }
 
         [Theory]
@@ -83,11 +100,12 @@ namespace Basket.Tests.Basket_Tests
         public void CheckCalculateFinalCostCalculatesCorrectly(int buttersQty, int milksQty, int breadsQty, decimal finalCost)
         {
             //  Arrange
-            Mock<IPromoRepository> promoRepository = new Mock<IPromoRepository>();
+            PromoRepository promoRepository = new PromoRepository();
             ProductRepository productRepository = new ProductRepository();
 
-            GroceriesBasket basket = new GroceriesBasket(promoRepository.Object, productRepository);
+            GroceriesBasket basket = new GroceriesBasket(promoRepository, productRepository);
             basket.AddProducts(buttersQty, milksQty, breadsQty);
+            basket.AddPromos();
 
             //  Act
             basket.CalculateFinalCost();

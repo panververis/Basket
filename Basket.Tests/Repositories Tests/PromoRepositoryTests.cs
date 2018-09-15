@@ -1,6 +1,7 @@
 ﻿using Basket.Domain;
 using Basket.Domain.Repositories.Concrete;
 using Common;
+using Common.Enums;
 using Xunit;
 
 namespace Basket.Tests.Repositories_Tests
@@ -42,17 +43,17 @@ namespace Basket.Tests.Repositories_Tests
         private bool IsTestPromoOne(Promo promoOne)
         {
             return      promoOne.RequiredProductQty             == CommonTestInfo.PromoOneRequiredButterQty
-                    &&  promoOne.RequiredProductType            == Common.Enums.ProductTypes.Butter
+                    &&  promoOne.RequiredProductType            == ProductTypes.Butter
                     &&  promoOne.ApplicableDiscountPercentage   == CommonTestInfo.PromoOneDiscountPercentage
-                    &&  promoOne.ApplicableProductType          == Common.Enums.ProductTypes.Bread;
+                    &&  promoOne.ApplicableProductType          == ProductTypes.Bread;
         }
 
         private bool IsTestPromoTwo(Promo promoTwo)
         {
             return     promoTwo.RequiredProductQty              == CommonTestInfo.PromoTwoRequiredMilkQty
-                    && promoTwo.RequiredProductType             == Common.Enums.ProductTypes.Milk
+                    && promoTwo.RequiredProductType             == ProductTypes.Milk
                     && promoTwo.ApplicableDiscountPercentage    == CommonTestInfo.PromoTwoDiscountPercentage
-                    && promoTwo.ApplicableProductType           == Common.Enums.ProductTypes.Milk;
+                    && promoTwo.ApplicableProductType           == ProductTypes.Milk;
         }
 
         #endregion

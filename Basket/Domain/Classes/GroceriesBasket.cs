@@ -1,6 +1,7 @@
 ﻿using Basket.Domain.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Basket.Domain.Classes
@@ -57,8 +58,19 @@ namespace Basket.Domain.Classes
             ProductsList = productsList;
         }
 
-        public void CalculateFinalCost()
-        {
+        public void AddPromos() {
+            List<Promo> promosList = new List<Promo>();
+            promosList.Add(PromoRepo.GetPromoOne());
+            promosList.Add(PromoRepo.GetPromoTwo());
+            PromosList = promosList;
+        }
+
+        /// <summary>
+        /// Firstly we calculate the Total Cost.
+        /// Next we calculate the Sum of the Promo Deductions, as per the number of Active & Applicable Promos
+        /// Lastly we subtract the Promo Deductions from the Total Cost, thus the Final Cost is calculated
+        /// </summary>
+        public void CalculateFinalCost() {
             throw new Exception("Not yet implemented");
         }
 
