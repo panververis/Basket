@@ -1,5 +1,4 @@
 ﻿using Basket.Domain.Repositories.Interfaces;
-using System;
 
 namespace Basket.Domain.Repositories.Concrete
 {

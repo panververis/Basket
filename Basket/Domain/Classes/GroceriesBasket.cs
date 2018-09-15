@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Basket.Domain.Classes
 {
@@ -32,7 +31,7 @@ namespace Basket.Domain.Classes
 
         #endregion
 
-        #region Methods (Not yet implemented)
+        #region Methods
 
         public void AddButter()
         {
