@@ -1,4 +1,5 @@
-﻿using Basket.Domain.Repositories.Interfaces;
+﻿using Basket.Domain.Classes.Concrete;
+using Basket.Domain.Repositories.Interfaces;
 
 namespace Basket.Domain.Repositories.Concrete
 {

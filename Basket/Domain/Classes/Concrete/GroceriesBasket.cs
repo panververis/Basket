@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Basket.Domain.Classes
+namespace Basket.Domain.Classes.Concrete
 {
     public class GroceriesBasket
     {

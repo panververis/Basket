@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Basket.Domain.Classes.Concrete;
+using System.Collections.Generic;
 
 namespace Basket.Domain.Repositories.Interfaces
 {

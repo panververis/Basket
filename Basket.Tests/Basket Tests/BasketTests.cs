@@ -1,11 +1,7 @@
-﻿using Basket.Domain;
-using Basket.Domain.Classes;
-using Basket.Domain.Repositories.Concrete;
-using Basket.Domain.Repositories.Interfaces;
+﻿using Basket.Domain.Classes.Concrete;
 using Common.Enums;
 using Moq;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace Basket.Tests.Basket_Tests

@@ -1,4 +1,6 @@
-﻿namespace Basket.Domain.Repositories.Interfaces
+﻿using Basket.Domain.Classes.Concrete;
+
+namespace Basket.Domain.Repositories.Interfaces
 {
     public interface IPromoRepository
     {

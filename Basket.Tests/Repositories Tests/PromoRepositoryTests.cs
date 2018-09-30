@@ -1,4 +1,4 @@
-﻿using Basket.Domain;
+﻿using Basket.Domain.Classes.Concrete;
 using Basket.Domain.Repositories.Concrete;
 using Common;
 using Common.Enums;

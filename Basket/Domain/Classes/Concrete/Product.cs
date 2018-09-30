@@ -1,8 +1,9 @@
-﻿using Common.Enums;
+﻿using Basket.Domain.Classes.Interfaces;
+using Common.Enums;
 
-namespace Basket.Domain
+namespace Basket.Domain.Classes.Concrete
 {
-    public class Product
+    public class Product : IProduct
     {
         #region Ctor
 
