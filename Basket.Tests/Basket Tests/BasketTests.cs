@@ -37,32 +37,6 @@ namespace Basket.Tests.Basket_Tests
             Assert.Equal(2, basket.ProductsList.Count);
         }
 
-        [Fact]
-        public void CheckAddPromoAddsPromo() {
-            //  Arrange
-            GroceriesBasket basket = new GroceriesBasket();
-
-            //  Act
-            basket.AddPromo(new Promo(It.IsAny<string>(), It.IsAny<ProductTypes>(), It.IsAny<int>(), It.IsAny<ProductTypes>(), It.IsAny<int>()));
-
-            //  Assert
-            Assert.NotEmpty(basket.PromosList);
-        }
-
-        [Fact]
-        public void CheckAddPromosAddsPromos()
-        {
-            //  Arrange
-            GroceriesBasket basket = new GroceriesBasket();
-
-            //  Act
-            basket.AddPromos(new List<Promo>(){ new Promo(It.IsAny<string>(), It.IsAny<ProductTypes>(), It.IsAny<int>(), It.IsAny<ProductTypes>(), It.IsAny<int>()),
-                                                new Promo(It.IsAny<string>(), It.IsAny<ProductTypes>(), It.IsAny<int>(), It.IsAny<ProductTypes>(), It.IsAny<int>())});
-
-            //  Assert
-            Assert.Equal(2, basket.PromosList.Count);
-        }
-
         //[Theory]
         //[InlineData(1, 1, 1, 2.95)]
         //[InlineData(2, 0, 2, 3.10)]

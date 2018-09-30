@@ -8,7 +8,6 @@ namespace Basket.Domain.Classes
 
         public GroceriesBasket() {
             ProductsList    = new List<Product>();
-            PromosList      = new List<Promo>();
         }
 
         #endregion
@@ -16,7 +15,6 @@ namespace Basket.Domain.Classes
         #region Properties
 
         public  List<Product>       ProductsList        { get; private set; }
-        public  List<Promo>         PromosList          { get; private set; }
         //public  decimal             TotalCost           { get; private set; }
         //public  decimal             PromoDeductions     { get; private set; }
         //public  decimal             FinalCost           { get; private set; }
@@ -31,14 +29,6 @@ namespace Basket.Domain.Classes
 
         public void AddProducts(List<Product> productsList) {
             ProductsList = productsList;
-        }
-
-        public void AddPromo(Promo promo) {
-            PromosList.Add(promo);
-        }
-
-        public void AddPromos(List<Promo> promosList) {
-            PromosList = promosList;
         }
 
         ///// <summary>
