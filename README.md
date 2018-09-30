@@ -47,7 +47,3 @@ THEN each separate "Promo" calculates the amount that will be deducted from the 
 Finally, the sum of the "Promo Deductions" is subtracted from the Final Cost, and there you have it, 
 a complete, clear, dynamic, completely decoupled picture of how the "Final Cost" was calculated.
 That also enables for a breakdown of all the calculations to be printed on a receipt, for example!
-
-==
-My way of thinking was influenced by a combination of clear-cut SOLID design, as well as the Strategy Pattern. (where we can consider each Promo a "Strategy" implementation)
-==
