@@ -1,4 +1,5 @@
 ﻿using Basket.Domain.Classes.Concrete;
+using Basket.Domain.Classes.Interfaces;
 using Common.Enums;
 using Moq;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Basket.Tests.Basket_Tests
             GroceriesBasket basket = new GroceriesBasket();
 
             //  Act
-            basket.AddProduct(new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Bread));
+            basket.AddProduct(new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductType.Bread));
 
             //  Assert
             Assert.NotEmpty(basket.ProductsList);
@@ -26,8 +27,9 @@ namespace Basket.Tests.Basket_Tests
             GroceriesBasket basket = new GroceriesBasket();
 
             //  Act
-            basket.AddProducts(new List<Product>() {    new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Bread),
-                                                        new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductTypes.Butter)});
+            basket.AddProducts(new List<IProduct>() {
+                new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductType.Bread),
+                new Product(It.IsAny<string>(), It.IsAny<decimal>(), ProductType.Butter)});
 
             //  Assert
             Assert.Equal(2, basket.ProductsList.Count);

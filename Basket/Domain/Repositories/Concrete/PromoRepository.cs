@@ -1,5 +1,6 @@
 ﻿using Basket.Domain.Classes.Concrete;
 using Basket.Domain.Repositories.Interfaces;
+using Common;
 
 namespace Basket.Domain.Repositories.Concrete
 {
@@ -7,12 +8,22 @@ namespace Basket.Domain.Repositories.Concrete
     {
         public Promo GetPromoOne()
         {
-            return new Promo("Buy 2 Butter and get a Bread at 50% off!! What an amazing offer!", Common.Enums.ProductTypes.Butter, 2, Common.Enums.ProductTypes.Bread, 50);
+            return new Promo(
+                CommonTestInfo.PromoOneDescription, 
+                CommonTestInfo.PromoOneRequiredProductType,
+                CommonTestInfo.PromoOneRequiredProductQty,
+                CommonTestInfo.PromoOneApplicableProductType,
+                CommonTestInfo.PromoOneDiscountPercentage);
         }
 
         public Promo GetPromoTwo()
         {
-            return new Promo("Buy 3 Milk and get the 4th milk for free!! Another amazing offer!", Common.Enums.ProductTypes.Milk, 4, Common.Enums.ProductTypes.Milk, 100);
+            return new Promo(
+                CommonTestInfo.PromoTwoDescription,
+                CommonTestInfo.PromoTwoRequiredProductType,
+                CommonTestInfo.PromoTwoRequiredProductQty,
+                CommonTestInfo.PromoTwoApplicableProductType,
+                CommonTestInfo.PromoTwoDiscountPercentage);
         }
     }
 }

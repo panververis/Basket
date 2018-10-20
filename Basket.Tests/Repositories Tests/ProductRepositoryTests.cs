@@ -63,9 +63,9 @@ namespace Basket.Tests.Repositories_Tests
             List<Product> products = prodRepo.GetProducts(buttersQty, milksQty, breadQty);
 
             //  Assert
-            Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductTypes.Butter));
-            Assert.Equal(milksQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductTypes.Milk));
-            Assert.Equal(breadQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductTypes.Bread));
+            Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductType.Butter));
+            Assert.Equal(milksQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductType.Milk));
+            Assert.Equal(breadQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductType.Bread));
         }
 
         [Theory]
@@ -88,19 +88,19 @@ namespace Basket.Tests.Repositories_Tests
 
         private bool IsTestButter(Product butter)
         {
-            return      butter.ProductType == ProductTypes.Butter 
+            return      butter.ProductType == ProductType.Butter 
                     &&  butter.Price == CommonTestInfo.ButterPrice;
         }
 
         private bool IsTestMilk(Product milk)
         {
-            return milk.ProductType == ProductTypes.Milk
+            return milk.ProductType == ProductType.Milk
                     && milk.Price == CommonTestInfo.MilkPrice;
         }
 
         private bool IsTestBread(Product bread)
         {
-            return bread.ProductType == ProductTypes.Bread
+            return bread.ProductType == ProductType.Bread
                     && bread.Price == CommonTestInfo.BreadPrice;
         }
 

@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using Basket.Domain.Classes.Interfaces;
+using System.Collections.Generic;
 
 namespace Basket.Domain.Classes.Concrete
 {
-    public class GroceriesBasket
+    public class GroceriesBasket : IGroceriesBasket
     {
         #region Ctor
 
         public GroceriesBasket() {
-            ProductsList    = new List<Product>();
+            ProductsList    = new List<IProduct>();
         }
 
         #endregion
 
         #region Properties
 
-        public  List<Product>       ProductsList        { get; private set; }
+        public  List<IProduct>       ProductsList        { get; private set; }
         //public  decimal             TotalCost           { get; private set; }
         //public  decimal             PromoDeductions     { get; private set; }
         //public  decimal             FinalCost           { get; private set; }
@@ -23,11 +24,11 @@ namespace Basket.Domain.Classes.Concrete
 
         #region Methods
 
-        public void AddProduct(Product product) {
+        public void AddProduct(IProduct product) {
             ProductsList.Add(product);
         }
 
-        public void AddProducts(List<Product> productsList) {
+        public void AddProducts(List<IProduct> productsList) {
             ProductsList = productsList;
         }
 
@@ -53,7 +54,7 @@ namespace Basket.Domain.Classes.Concrete
         //        int timesOfPromoApplication = (int)Math.Floor((decimal)(ProductsList.Count(x => x.ProductType == promo.RequiredProductType) / promo.RequiredProductQty));
         //        Product applicableProduct = ProductsList.FirstOrDefault(x => x.ProductType == promo.ApplicableProductType);
         //        if (applicableProduct != null) {
-        //            decimal promoDeduction = timesOfPromoApplication * Math.Round(applicableProduct.Price*promo.ApplicableDiscountPercentage/100, 2);
+        //            decimal promoDeduction = timesOfPromoApplication * Math.Round(applicableProduct.Price*promo.ApplicableDiscountPercentage/100, CommonTestInfo.RoundingPoints);
         //            PromoDeductions += promoDeduction;
         //        }
         //    }

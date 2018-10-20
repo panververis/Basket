@@ -1,5 +1,7 @@
 ﻿using Basket.Domain.Classes.Concrete;
 using Basket.Domain.Repositories.Interfaces;
+using Common;
+using Common.Enums;
 using System;
 using System.Collections.Generic;
 
@@ -9,17 +11,17 @@ namespace Basket.Domain.Repositories.Concrete
     {
         public Product GetButter()
         {
-            return new Product("Super awesome butter brand", 0.80m, Common.Enums.ProductTypes.Butter);
+            return new Product("Super awesome butter brand", CommonTestInfo.ButterPrice, ProductType.Butter);
         }
 
         public Product GetMilk()
         {
-            return new Product("Super awesome milk brand", 1.15m, Common.Enums.ProductTypes.Milk);
+            return new Product("Super awesome milk brand", CommonTestInfo.MilkPrice, ProductType.Milk);
         }
 
         public Product GetBread()
         {
-            return new Product("Super awesome bread brand", 1.00m, Common.Enums.ProductTypes.Bread);
+            return new Product("Super awesome bread brand", CommonTestInfo.BreadPrice, ProductType.Bread);
         }
 
         public List<Product> GetProducts(int? buttersQty, int? milksQty, int? breadsQty)

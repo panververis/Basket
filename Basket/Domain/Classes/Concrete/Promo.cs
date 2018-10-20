@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Basket.Domain.Classes.Interfaces;
+using Common;
 using Common.Enums;
 
 namespace Basket.Domain.Classes.Concrete
@@ -23,11 +24,11 @@ namespace Basket.Domain.Classes.Concrete
         /// Parameterized Constructor
         /// </summary>
         public Promo(
-            string          description,
-            ProductTypes    requiredProductType,
-            int             requiredProductQty,
-            ProductTypes    applicableProductType,
-            int             applicableDiscountPercentage)
+            string                          description,
+            ProductType                     requiredProductType,
+            int                             requiredProductQty,
+            ProductType                     applicableProductType,
+            int                             applicableDiscountPercentage)
         {
             Description                     = description;
             RequiredProductType             = requiredProductType;
@@ -41,9 +42,9 @@ namespace Basket.Domain.Classes.Concrete
         #region Properties
 
         public string       Description                     { get; private set; }
-        public ProductTypes RequiredProductType             { get; private set; }
+        public ProductType  RequiredProductType             { get; private set; }
         public int          RequiredProductQty              { get; private set; }
-        public ProductTypes ApplicableProductType           { get; private set; }
+        public ProductType  ApplicableProductType           { get; private set; }
         public int          ApplicableDiscountPercentage    { get; private set; }
         public decimal      Deduction                       { get; private set; }
 
@@ -62,7 +63,7 @@ namespace Basket.Domain.Classes.Concrete
                 int timesOfPromoApplication = (int)Math.Floor((decimal)(products.Count(x => x.ProductType == RequiredProductType) / RequiredProductQty));
                 IProduct applicableProduct = products.FirstOrDefault(x => x.ProductType == ApplicableProductType);
                 if (applicableProduct != null) {
-                    Deduction = timesOfPromoApplication * Math.Round(applicableProduct.Price * ApplicableDiscountPercentage / 100, 2);
+                    Deduction = timesOfPromoApplication * Math.Round(applicableProduct.Price * ApplicableDiscountPercentage / 100, CommonTestInfo.RoundingPoints);
                 }
             }
             return Deduction;

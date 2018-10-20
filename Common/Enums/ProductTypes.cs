@@ -1,6 +1,6 @@
 ﻿namespace Common.Enums
 {
-    public enum ProductTypes
+    public enum ProductType
     {
         Butter  = 1,
         Milk    = 2,

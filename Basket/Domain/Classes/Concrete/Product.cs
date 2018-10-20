@@ -10,7 +10,7 @@ namespace Basket.Domain.Classes.Concrete
         /// <summary>
         /// Parameterized constructor
         /// </summary>
-        public Product(string name, decimal price, ProductTypes productType) {
+        public Product(string name, decimal price, ProductType productType) {
             Name        = name;
             Price       = price;
             ProductType = productType;
@@ -22,7 +22,7 @@ namespace Basket.Domain.Classes.Concrete
 
         public string       Name        { get; private set; }
         public decimal      Price       { get; private set; }
-        public ProductTypes ProductType { get; private set; }
+        public ProductType  ProductType { get; private set; }
 
         #endregion
     }

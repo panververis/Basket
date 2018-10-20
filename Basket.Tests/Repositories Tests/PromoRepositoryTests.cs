@@ -42,18 +42,18 @@ namespace Basket.Tests.Repositories_Tests
 
         private bool IsTestPromoOne(Promo promoOne)
         {
-            return      promoOne.RequiredProductQty             == CommonTestInfo.PromoOneRequiredButterQty
-                    &&  promoOne.RequiredProductType            == ProductTypes.Butter
+            return      promoOne.Description                    == CommonTestInfo.PromoOneDescription
+                    &&  promoOne.RequiredProductType            == CommonTestInfo.PromoOneRequiredProductType
                     &&  promoOne.ApplicableDiscountPercentage   == CommonTestInfo.PromoOneDiscountPercentage
-                    &&  promoOne.ApplicableProductType          == ProductTypes.Bread;
+                    &&  promoOne.ApplicableProductType          == CommonTestInfo.PromoOneApplicableProductType;
         }
 
         private bool IsTestPromoTwo(Promo promoTwo)
         {
-            return     promoTwo.RequiredProductQty              == CommonTestInfo.PromoTwoRequiredMilkQty
-                    && promoTwo.RequiredProductType             == ProductTypes.Milk
-                    && promoTwo.ApplicableDiscountPercentage    == CommonTestInfo.PromoTwoDiscountPercentage
-                    && promoTwo.ApplicableProductType           == ProductTypes.Milk;
+            return      promoTwo.Description                    == CommonTestInfo.PromoTwoDescription
+                    &&  promoTwo.RequiredProductType            == CommonTestInfo.PromoTwoRequiredProductType
+                    &&  promoTwo.ApplicableDiscountPercentage   == CommonTestInfo.PromoTwoDiscountPercentage
+                    &&  promoTwo.ApplicableProductType          == CommonTestInfo.PromoTwoApplicableProductType;
         }
 
         #endregion
