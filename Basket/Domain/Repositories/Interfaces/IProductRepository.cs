@@ -1,4 +1,5 @@
 ﻿using Basket.Domain.Classes.Concrete;
+using Basket.Domain.Classes.Interfaces;
 using System.Collections.Generic;
 
 namespace Basket.Domain.Repositories.Interfaces
@@ -8,6 +9,6 @@ namespace Basket.Domain.Repositories.Interfaces
         Product GetButter();
         Product GetMilk();
         Product GetBread();
-        List<Product> GetProducts(int? buttersQty = 1, int? milksQty = 1, int? breadsQty = 1);
+        List<IProduct> GetProducts(int? buttersQty = 1, int? milksQty = 1, int? breadsQty = 1);
     }
 }

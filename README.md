@@ -42,7 +42,7 @@ Overview of calculations ===> "Basket" + "Products" + "Promos" ===> "Final Cost"
 							  "Final Cost" = "Total Cost" - "Promo Deductions"
 
 The Final Price will be calculated in the following way:
-The Total Cost (WITHOUT any deductions / discounts) is calculated by the "Basket" itself, which is essentially a Sum of its Products' Prices.
+The Total Cost (WITHOUT any deductions / discounts) is calculated by the "CostCalculator" class, which is essentially a Sum of its Products' Prices.
 THEN each separate "Promo" calculates the amount that will be deducted from the Total Cost.
 Finally, the sum of the "Promo Deductions" is subtracted from the Final Cost, and there you have it, 
 a complete, clear, dynamic, completely decoupled picture of how the "Final Cost" was calculated.

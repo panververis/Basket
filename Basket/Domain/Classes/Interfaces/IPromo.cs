@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Basket.Domain.Classes.Interfaces
 {
-    interface IPromo {
+    public interface IPromo {
         string          Description                     { get; }
         ProductType     RequiredProductType             { get; }
         int             RequiredProductQty              { get; }

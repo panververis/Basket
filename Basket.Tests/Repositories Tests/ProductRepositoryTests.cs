@@ -1,4 +1,5 @@
 ﻿using Basket.Domain.Classes.Concrete;
+using Basket.Domain.Classes.Interfaces;
 using Basket.Domain.Repositories.Concrete;
 using Common;
 using Common.Enums;
@@ -60,7 +61,7 @@ namespace Basket.Tests.Repositories_Tests
             ProductRepository prodRepo = new ProductRepository();
 
             //  Act
-            List<Product> products = prodRepo.GetProducts(buttersQty, milksQty, breadQty);
+            List<IProduct> products = prodRepo.GetProducts(buttersQty, milksQty, breadQty);
 
             //  Assert
             Assert.Equal(buttersQty.GetValueOrDefault(1), products.Count(x => x.ProductType == ProductType.Butter));

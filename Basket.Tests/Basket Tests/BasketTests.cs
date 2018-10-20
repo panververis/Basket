@@ -34,27 +34,5 @@ namespace Basket.Tests.Basket_Tests
             //  Assert
             Assert.Equal(2, basket.ProductsList.Count);
         }
-
-        //[Theory]
-        //[InlineData(1, 1, 1, 2.95)]
-        //[InlineData(2, 0, 2, 3.10)]
-        //[InlineData(0, 4, 0, 3.45)]
-        //[InlineData(2, 8, 1, 9.00)]
-        //public void CheckCalculateFinalCostCalculatesCorrectly(int buttersQty, int milksQty, int breadsQty, decimal finalCost)
-        //{
-        //    //  Arrange
-        //    PromoRepository promoRepository = new PromoRepository();
-        //    ProductRepository productRepository = new ProductRepository();
-
-        //    GroceriesBasket basket = new GroceriesBasket(promoRepository, productRepository);
-        //    basket.AddProducts(buttersQty, milksQty, breadsQty);
-        //    basket.AddPromos();
-
-        //    //  Act
-        //    basket.CalculateFinalCost();
-
-        //    //  Assert
-        //    Assert.Equal(finalCost, basket.FinalCost);
-        //}
     }
 }

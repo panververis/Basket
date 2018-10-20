@@ -13,6 +13,7 @@ namespace Basket.Tests.Promo_Tests
     /// </summary>
     public class PromoTests
     {
+        [Fact]
         public void CheckFirstPromoCalculateDeductionCalculatesCorrectDeduction()
         {
             //  Arrange
@@ -36,6 +37,7 @@ namespace Basket.Tests.Promo_Tests
             Assert.Equal((Math.Round(CommonTestInfo.BreadPrice * firstPromo.ApplicableDiscountPercentage / 100, CommonTestInfo.RoundingPoints)), firstPromo.Deduction);
         }
 
+        [Fact]
         public void CheckSecondPromoCalculateDeductionCalculatesCorrectDeduction()
         {
             //  Arrange
